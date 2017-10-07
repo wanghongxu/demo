@@ -1,0 +1,81 @@
+
+.weather-container {
+	width: 540px;
+	height: 195px;
+	color: #fff;
+	background-color: #1d4069;
+	display: block;
+}
+
+.weather_day {
+	position: absolute;
+	cursor: auto;
+}
+
+.container-today {
+	width: 186px;
+	height: 250px;
+	
+}
+
+.container-future {
+	width: 89px;
+	height: 186px;
+	text-decoration: none;
+	color: #fff;
+}
+
+.container-future p {
+	text-align: center;
+	font-size: 12px;
+	line-height: 1em;
+}
+
+.weather_icon {
+	width: 50px;
+	height: 50px;
+	margin: 8px 0 0 60px;
+}
+
+.weather_icon_future {
+	width: 50px;
+	height: 50px;
+	margin: 8px 0 0 20px;
+}
+
+.weather_split {
+	position: absolute;
+	left: 0px;
+	top: 8px;
+	width: 1px;
+	height: 180px;
+	background-color: #fff;
+	opacity: 0.15;
+}
+
+.temperature_container {
+	position: relative;
+	text-align: center;
+}
+
+.temperature_value {
+	display: inline-block;
+    font-size: 48px;
+    line-height: 64px;
+    font-family: Arial;
+}
+
+.temperature_unit_status {
+	display: inline-block;
+ }
+
+.temperature_unit {
+	display: block;
+    text-align: left;
+}
+
+.temperature_status {
+	display: block;
+    text-align: left;
+}
+

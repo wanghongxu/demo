@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="./src/style/weather.css">
+</head>
+<body>
+    
+    <div id="app" class="weather-container">
+        <div class="weather_day container-today">
+            <!-- TODO:通过模板绑定url -->
+            <div class="weather_icon" style="background-image: url('src/assets/image/rainy.png')"></div>
+            <div class="temperature_container">
+                <span class="temperature_value">{{ today_temp.value }}</span>
+                <span class="temperature_unit_status">
+                    <i class="temperature_unit">{{ today_temp.unit }}</i>
+                    <i class="temperature_status">{{ today_temp.status }}</i>
+                </span>
+            </div>
+            <div class="temperature_container" v-text="today_temp.range">
+            </div>
+            <div class="temperature_container">
+                {{ today_temp.rainfall }}
+            </div>
+            <div class="temperature_container">
+                {{ today_temp.wind }}
+            </div>
+        </div>
+        
+        <template v-for="item in weather_future_items">
+            <a class="weather_day container-future" :style="{left:item.left_position + 'px'}" target="_self" href="#"
+            @click="showCurrentWeather">
+                <div class="weather_split"></div>
+                <p>周日</p>
+                <p>10月8日</p>
+                <div class="weather_icon_future" style="background-image: url('src/assets/image/cloudy.png')"></div>
+
+                <p>27 ~ 31℃</p>
+                <p>多云转雷阵雨</p>
+                <p>无持续风向微风</p>
+            </a>
+        </template>
+    </div>
+</body>
+
+
+<script type="text/javascript">
+    
+    var tmp = {
+        value: 28,
+        unit: "℃",
+        status: "阵雨(实时)",
+        range: "26 ~ 32℃",
+        rainfall: "阵雨",
+        wind: "无持续风向微风"
+    };
+
+    var weather_future_items = [
+        {
+            left_position: 188
+        },
+        {
+            left_position: 276
+        },
+        {
+            left_position: 364
+        },
+        {
+            left_position: 452
+        }
+    ];
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        today_temp: tmp,
+        weather_future_items: weather_future_items
+      },
+      methods: {
+        showCurrentWeather: function(event)
+        {
+            alert(event.target.tagName)
+        }
+      }
+    });
+
+
+
+
+</script>
+</html>
